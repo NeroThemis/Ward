@@ -1,7 +1,48 @@
 <!DOCTYPE html>
-<html>
-<body style="background-color: #564f5b;">
-<h1>This is a test, may it work.</h1>
-<p>I'm hosted with GitHub Pages.</p>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Bars Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .bar {
+            height: 50px; /* Height of the bar */
+            color: white; /* Text color */
+            display: flex; /* Flexbox for centering text */
+            align-items: center; /* Center text vertically */
+            justify-content: center; /* Center text horizontally */
+            margin: 10px 0; /* Margin between bars */
+        }
+        .bar1 {
+            background-color: #564f5b; /* Color for the first bar */
+        }
+        .bar2 {
+            background-color: #4a90e2; /* Color for the second bar */
+        }
+        .bar3 {
+            background-color: #e94e77; /* Color for the third bar */
+        }
+        .content {
+            padding: 20px; /* Padding for the content area */
+        }
+    </style>
+</head>
+<body>
+    <div class="bar bar1">This is the first visual bar</div>
+    <div class="content">
+        <h1>Main Content Area</h1>
+        <p>This is the main content area of the page.</p>
+    </div>
+    <div class="bar bar2">This is the second visual bar</div>
+    <div class="content">
+        <h2>Another Section</h2>
+        <p>This is another section of the page.</p>
+    </div>
+    <div class="bar bar3">This is the third visual bar</div>
 </body>
 </html>
