@@ -5,23 +5,46 @@
     <style>
         body {
             background-color: #564f5b;
+            display: flex; /* Use flexbox for layout */
+            justify-content: space-between; /* Space between main content and sidebar */
+            padding: 20px; /* Add some padding */
+        }
+        .main-content {
+            flex: 1; /* Allow main content to take available space */
+            margin-right: 20px; /* Space between main content and sidebar */
+        }
+        .sidebar {
+            width: 300px; /* Fixed width for the sidebar */
+            background-color: #fff; /* Background color for the sidebar */
+            border-radius: 8px; /* Rounded corners */
+            padding: 20px; /* Padding inside the sidebar */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+        }
+        .sidebar img {
+            width: 100%; /* Make the image responsive */
+            border-radius: 8px; /* Rounded corners for the image */
         }
     </style>
 </head>
 <body>
-    <h1>Welcome to the Hidden Archives of the Ward's Mainframe.</h1>
-    <p>You are required to have Officer Access Level [OA] or direct permission from the Warden, if you believe your granted access is a mistake, notify a superior officer immediately.</p>
+    <div class="main-content">
+        <h1>Welcome to the Hidden Archives of the Ward's Mainframe.</h1>
+        <p>You are required to have Officer Access Level [OA] or direct permission from the Warden. If you believe your granted access is a mistake, notify a superior officer immediately.</p>
+    </div>
 
-    <div class="pi-item pi-data pi-item-spacing pi-border-color" data-source="alias">
-        <h3 class="pi-data-label pi-secondary-font">Also known as</h3>
-        <div class="pi-data-value pi-font">
-            <ul>
-                <li>Nero the Warden</li>
-                <li>Nero the Endling</li>
-                <li>The One Who Watches</li>
-                <li>The Last Neo-Lagos</li>
-                <li>Neo-Lagomorph Rexis</li>
-            </ul>
+    <div class="sidebar">
+        <img src="NeroFrontView.png" alt="Nero Front View">
+        <div class="pi-item pi-data pi-item-spacing pi-border-color" data-source="alias">
+            <h3 class="pi-data-label pi-secondary-font">Also known as</h3>
+            <div class="pi-data-value pi-font">
+                <ul>
+                    <li>Nero the Warden</li>
+                    <li>Nero the Endling</li>
+                    <li>The One Who Watches</li>
+                    <li>The Last Neo-Lagos</li>
+                    <li>Neo-Lagomorph Rexis</li>
+                </ul>
+            </div>
         </div>
     </div>
 </body>
