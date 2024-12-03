@@ -1,33 +1,37 @@
 <!DOCTYPE html>
-<html lang="en"> <!-- Added language attribute for accessibility -->
+<html lang="en">
 <head>
-    <meta charset="UTF-8"> <!-- Added character set declaration -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Added viewport for responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Ward's Mainframe</title>
     <link rel="icon" href="visual-assets/global/WardIconWebsite.png" type="image/png">
     <style>
-        body {
-            background-image: url('visual-assets/global/website-background-image.png');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            justify-content: center; 
-            align-items: center;
-            height: 80vh 0;
-            margin: 0;
-            color: white;
-            font-family:
-        }
-        .main-panel {
-            display: flex;
-            background-color: rgba(79, 84, 107, 0.8);
-            border-radius: 8px;
-            padding: 20px;
-            width: 80%;
-            max-width: 800px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-            margin: 20px 0;
-        }
+		body {
+			background-image: url('visual-assets/global/website-background-image.png');
+			background-size: cover;
+			background-position: center;
+			display: flex;
+			justify-content: center; 
+			align-items: center;
+			min-height: 100vh; /* Use min-height instead of height */
+			margin: 0;
+			padding: 20px; /* Add padding to the body */
+			color: white;
+			font-family: 'Arial', sans-serif;
+		}
+
+		.main-panel {
+			display: flex;
+			flex-direction: column; /* Stack elements vertically on small screens */
+			background-color: rgba(79, 84, 107, 0.8);
+			border-radius: 8px;
+			padding: 20px;
+			width: 90%; /* Use percentage for responsiveness */
+			max-width: 800px;
+			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+			margin: 20px 0; /* Margin for spacing */
+			min-height: 80vh; /* Set a minimum height for the main panel */
+		}
         .main-content {
             flex: 1;
             margin-right: 20px;
@@ -38,7 +42,8 @@
             padding: 20px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
             border: 2px solid white;
-            width: 300px;
+            width: 100%; /* Full width on small screens */
+            max-width: 300px; /* Limit width on larger screens */
         }
         .sidebar img {
             width: 100%;
@@ -47,6 +52,29 @@
         .character-name {
             text-align: center;
             margin: 10px 0;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (min-width: 600px) {
+            .main-panel {
+                flex-direction: row; /* Change to row layout on larger screens */
+            }
+            .main-content {
+                margin-right: 20px;
+            }
+            .sidebar {
+                width: 300px; /* Fixed width for sidebar on larger screens */
+            }
+        }
+
+        /* Additional styles for smaller screens */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px; /* Add padding for smaller screens */
+            }
+            .main-content {
+                margin-right: 0; /* Remove margin on smaller screens */
+            }
         }
     </style>
 </head>
@@ -94,7 +122,8 @@
                         <li>Neo-Lagomorph Rexis (Species)</li>
                         <li>Prince Marinus Aragalia (Fiancé)</li>
                     </ul>
-                </div>			
+                </div>	
+				<hr class="separator">
                 <h3 class="pi-data-label pi-secondary-font">Characteristics</h3>
                 <div class="pi-data-value pi-font">
 				<div class="character-box">
@@ -118,7 +147,44 @@
 					<div class="attribute">
 					  <span class="attribute-label">Homeworld:</span>
 					  <span class="attribute-value">Neo-Morphalis</span>
+					</div>				
+				  </div>
+				</div>
+				
+				<hr class="separator">
+				<h3 class="pi-data-label pi-secondary-font">Origins</h3>
+				<div class="pi-data-value pi-font">
+				<div class="character-box">
+				  <div class="character-attributes">
+					<div class="attribute">
+					  <span class="attribute-label">Homeworld:</span>
+					  <span class="attribute-value">Neo-Morphalis A</span>
 					</div>
+					<div class="attribute">
+					  <span class="attribute-label">Dimension:</span>
+					  <span class="attribute-value">Lummus (0)</span>
+					</div>
+					<div class="attribute">
+					  <span class="attribute-label">Species:</span>
+					  <span class="attribute-value">Neo-Lagomorph Rexis</span>
+					</div>
+					<div class="attribute">
+					  <span class="attribute-label">Species Status:</span>
+					  <span class="attribute-value">Endling</span>
+					</div>
+					<div class="attribute">
+					  <span class="attribute-label">Anomalous Type:</span>
+					  <span class="attribute-value">Non-Applicable</span>
+					</div>				
+				  </div>
+				</div>
+				
+				<hr class="separator">
+				<h3 class="pi-data-label pi-secondary-font">Reproductive Biology and Gender</h3>
+                </div>
+				<div class="pi-data-value pi-font">
+				<div class="character-box">
+				  <div class="character-attributes">
 					<div class="attribute">
 					  <span class="attribute-label">Physiological Sex:</span>
 					  <span class="attribute-value">Simultaneous Hermaphrodite</span>
@@ -126,10 +192,18 @@
 					<div class="attribute">
 					  <span class="attribute-label">Gender Identity:</span>
 					  <span class="attribute-value">Genderless</span>
-					</div>				
+					</div>
+					<div class="attribute">
+					  <span class="attribute-label">Reproductive Cycle:</span>
+					  <span class="attribute-value">5 Years</span>
+					</div>	
+					<div class="attribute">
+					  <span class="attribute-label">Age of Maturity:</span>
+					  <span class="attribute-value">42 Years</span>
+					</div>						
 				  </div>
 				</div>
-                </div>					
+                </div>
             </div>
         </div>
     </div>
