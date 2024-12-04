@@ -9,7 +9,7 @@
 	
 		/* Your main CSS styles */
 		#image-container {
-		  position: fixed;
+		  position: absolute;
 		  top: 20px;
 		  right: 20px;
 		  width: 100px;
@@ -27,10 +27,23 @@
 		@media (max-width: 767px) {
 		  /* Styles for small screens */
 		  #image-container {
-			top: 10px;
-			right: 10px;
+			position: static;
 			width: 80px;
 			height: 80px;
+			margin-bottom: 20px;
+		  }
+
+		  .header-container {
+			position: static;
+			flex-direction: column;
+			align-items: center;
+			margin-bottom: 20px;
+		  }
+
+		  .main-panel,
+		  .secondary-panel {
+			width: 100%;
+			margin: 0 0 20px;
 		  }
 		}
 
@@ -42,6 +55,16 @@
 			width: 90px;
 			height: 90px;
 		  }
+
+		  .main-panel {
+			width: 70%;
+			margin: 80px 20px 20px;
+		  }
+
+		  .secondary-panel {
+			width: 25%;
+			margin: 80px 20px 20px;
+		  }
 		}
 
 		@media (min-width: 1200px) {
@@ -52,7 +75,18 @@
 			width: 100px;
 			height: 100px;
 		  }
+
+		  .main-panel {
+			width: 900px;
+			margin: 80px 20px 20px;
+		  }
+
+		  .secondary-panel {
+			width: 400px;
+			margin: 80px 20px 20px;
+		  }
 		}
+
 		
         @font-face {
             font-family: 'VT323';
