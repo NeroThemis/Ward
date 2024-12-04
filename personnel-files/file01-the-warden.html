@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ward's Mainframe</title>
+    <link rel="icon" href="../visual-assets/global/WardIconWebsite.png" type="image/png">
+    <style>
+        @font-face {
+            font-family: 'VT323';
+            src: url('../visual-assets/font/VT323-Regular.ttf') format('truetype');
+        }
+        
+        body {
+            background-image: url('../visual-assets/global/web-background-image.png');
+            background-repeat: repeat; /* Ensure the image repeats */
+            background-size: auto; /* Keep original size of background tiles */
+            background-position: top left; /* Start from the top left */
+            margin: 0;
+            font-family: 'VT323', monospace; /* Apply the font to the body */
+            display: flex; /* Use flexbox to layout the header and panel */
+            justify-content: center; /* Center items horizontally */
+            align-items: flex-start; /* Align items to the top */
+            height: 100vh; /* Full height of the viewport */
+            position: relative; /* Position relative for absolute positioning of children */
+            color: #1effa8; /* Default text color */
+            padding: 20px; /* Add some padding */
+        }
+
+        .header-container {
+            position: absolute; /* Position absolute to allow free placement */
+            top: 20px; /* Distance from the top */
+            left: 20px; /* Distance from the left */
+            display: flex; /* Use flexbox for alignment */
+            align-items: center; /* Center items vertically */
+        }
+
+        h1 {
+            color: #1effa8; /* Change text color */
+            font-size: 3em; /* Increase font size */
+            margin: 0; /* Remove default margin */
+        }
+
+        .social-icons {
+            display: flex; /* Use flexbox for alignment */
+            align-items: center; /* Center items vertically */
+            margin-left: 10px; /* Space between title and icons */
+        }
+
+        .social-icons img {
+            width: 64px; /* Set width to match larger pixel size */
+            height: 64px; /* Set height to match larger pixel size */
+            margin-left: 5px; /* Space between icons */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            image-rendering: pixelated; /* Ensure pixel art is rendered sharply */
+            image-rendering: crisp-edges; /* Alternative option */
+        }
+		.entry-local-images img {
+		    image-rendering: pixelated; /* Ensure pixel art is rendered sharply */
+            image-rendering: crisp-edges; /* Alternative option */
+		}
+
+        .main-panel {
+			width: 900px; /* Wider main panel */
+			height: auto; /* Change height to auto to adapt to content */
+			font-size: 1.2em;
+			padding: 20px; /* Add padding for content spacing */
+			box-sizing: border-box; /* Include padding in width/height */
+			background-color: rgba(0, 0, 0, 0.7); /* Background color with some transparency */
+			margin: 80px 20px 20px; /* Margin for spacing, moved down from top */
+			border: 4px solid #1effa8; /* Square outline */
+			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+			/* Removed max-height and overflow-y properties */
+		}
+        .panel p, .panel blockquote {
+            margin: 5px 0; /* Add margin for spacing */
+            color: #1effa8; /* Set font color */
+        }
+
+        .secondary-panel {
+            width: 400px; /* Wider secondary panel */
+			font-size: 1.2em;
+            margin: 80px 20px 20px; /* Margin for spacing, moved down from top */
+            padding: 10px; /* Padding for secondary panel */
+            background-color: rgba(0, 0, 0, 0.5); /* Background color for the secondary panel */
+            border: 4px solid #1effa8; /* Square outline */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+            margin-left: 20px; /* Space between main and secondary panel */
+        }
+
+        .separator {
+            border-top: 1px solid #1effa8; /* Separator line color */
+            margin: 10px 0; /* Margin around the separator */
+        }
+    </style>
+</head>
+<body>
+    <div class="header-container">
+        <h1>The Ward's Mainframe</h1>
+        <div class="social-icons">
+            <a href="https://bsky.app/profile/nerothemis.bsky.social" target="_blank">
+                <img src="../visual-assets/global/social-media-icon1.png" alt="Social Media Icon 1">
+            </a>
+            <a href="https://nerothemis.newgrounds.com/" target="_blank">
+                <img src="../visual-assets/global/social-media-icon2.png" alt="Social Media Icon 2">
+            </a>
+            <a href="https://discord.gg/QT5Xsp4CCk" target="_blank">
+                <img src="../visual-assets/global/social-media-icon3.png" alt="Social Media Icon 3">
+            </a>
+            <a href="https://www.youtube.com/@NeroThemis" target="_blank">
+                <img src="../visual-assets/global/social-media-icon4.png" alt="Social Media Icon 4">
+            </a>
+        </div>
+    </div>
+
+    <div class="main-panel">
+		<h2 class="file-report">Personnel File Report</h2>
+<p>In light of the Personnel Database being impartial, this file is being written by an Officer and not the Warden themselves. It will be fact-checked and reviewed by a council before publishing.</p>
+
+<p><strong>File Number</strong>: File 01</p>
+<p><strong>Personnel Name</strong>: Nero Themis</p>
+<p><strong>Species</strong>: Neo-Lagomorph Rexis (Neo-Lagos)</p>
+<p><strong>Position/Title</strong>: The Warden</p>
+<p><strong>Clearance Level</strong>: Total</p>
+
+<h3>Summary</h3>
+<p>Most often referred to as the Warden, Nero Themis is a Neo-Lagos who alongside several other anomalies from the source dimension Lummus have found themselves stuck in the secondary dimension now called Terra. Although stuck here due to a cataclysmic event that destroyed their original dimension, they are still behind the most prepared and deadly force humanity has ever faced, having tremendous amounts of experience and data in regards to anomalous entities and artifacts.</p>
+
+<p>Nero described Lummus as the "original dimension" from which all others originate, being the oldest, most complex, and most populated across all dimensions. Our dimension, called Terra, merged with Lummus due to an anomaly known as "Vorath the Veiled."</p>
+
+<p>The strange spaceship known as "The Ward" appeared in Earth's atmosphere on June 5, 2254. During a meeting between General Francis, a superior officer of the World Government, and the Warden themselves, it was explained that this strange spaceship is an <strong>ISO</strong> (Interdimensional Space-Obeliskron), capable of distorting and reconfiguring the laws of physics to a limited extent. It serves as the main base of operations for the Ward's personnel and as a prison or vault for anomalies that are now scattered throughout our own dimension.</p>
+
+<p>The World Government is aware of the Warden's intentions to serve as a protector; however, it remains skeptical given the threat their presence poses to their hegemony.</p>
+
+<h3>Service Record</h3>
+<p>Having created the Ward, Nero is considered an extremely capable engineer and leader, having an astonishing intuition and a vast amount of knowledge in regards to dealing with these anomalies. They have mentioned before that the battle against anomalies started long before the cataclysm that destroyed their original dimension.</p>
+
+<p>Most of the anomalies currently under containment were directly captured or recovered by the Warden themselves; they have also aided the World Government in recovery efforts following natural disasters or attacks from rogue anomalies.</p>
+
+<h3>Specialization/Skills</h3>
+<p>The extent of the Warden’s abilities is unknown; however, they have been observed exercising supernatural control over the elements, energy, and in some cases, matter, space, and even time itself. During a meeting with the World Government of Terra, they mentioned being capable of temporarily stopping time, reverting time by a few seconds, and halting time for specific individuals. They have also noted that their ability to control time is currently severely hindered because many of the anomalous entities contained within the Ward require complete temporal stasis for successful containment.</p>
+
+<h3>Appearance</h3>
+<p>Nero's true appearance was that of an anthropomorphic lagomorph, but instead of fur, they had scales reminiscent of a shark. They possessed long, heavy ears, feline paws, and powerful muscular legs. This form was shorter in stature compared to their initial form. Strikingly, they also had what appeared to be gills, despite having a nose, and featured a scorpion-like tail and horns akin to those of a jackalope.</p>
+
+<h3>Psychological Evaluation</h3>
+<p>The Warden is pragmatic, and although calm, they have been angered by humans in the past through sheer incompetence or needless cruelty. Quiet and collected, very few have had the opportunity to witness genuine signs of emotions from them as they prefer expressing them through words rather than through their face or body. On rare occasions, the Warden has been seen irritated; although they did not express their emotions overtly, the very air in the room seemed to tremble with their anger.</p>
+
+<h3>Notable Incidents</h3>
+<p>Non-Applicable.</p>
+
+<h3>Current Assignment</h3>
+<ul>
+    <li>Operation Wise, a mission pursuing the expansion of the Ward.</li>
+    <li>Operation Castelo Breach, a mission of research and pursuit of high threat level entities and artifacts.</li>
+</ul>
+
+<h3>Status</h3>
+<p>Active</p>
+    </div>
+
+    <div class="secondary-panel">
+        <h2 class="character-name">Nero Themis</h2>
+        <hr class="separator">
+		<div class="entry-local-images">
+        <img src="../visual-assets/entry-local/nero-web-image.png" alt="Nero Front View" style="width: 100%; border-radius: 8px;">
+		</div>
+        <hr class="separator">
+
+        <h3 class="pi-data-label pi-secondary-font">Characteristics</h3>
+        <div class="pi-data-value pi-font">
+            <div class="character-box">
+                <div class="character-attributes">
+                    <div class="attribute">
+                        <span class="attribute-label">Weight:</span>
+                        <span class="attribute-value">79 kg (174 lbs)</span>
+                    </div>
+                    <div class="attribute">
+                        <span class="attribute-label">Height:</span>
+                        <span class="attribute-value">152.4 cm (5'0 ft)</span>
+                    </div>
+                    <div class="attribute">
+                        <span class="attribute-label">Eye Color:</span>
+                        <span class="attribute-value">Black</span>
+                    </div>
+                    <div class="attribute">
+                        <span class="attribute-label">Age:</span>
+                        <span class="attribute-value">216.2 Billion Years</span>
+                    </div>			
+                </div>
+            </div>
+        </div>
+
+        <hr class="separator">
+        <h3 class="pi-data-label pi-secondary-font">Origins</h3>
+        <div class="pi-data-value pi-font">
+            <div class="character-box">
+                <div class="character-attributes">
+                    <div class="attribute">
+                        <span class="attribute-label">Homeworld:</span>
+                        <span class="attribute-value">Neo-Morphalis A</span>
+                    </div>
+                    <div class="attribute">
+                        <span class="attribute-label">Dimension:</span>
+                        <span class="attribute-value">Lummus (0)</span>
+                    </div>
+                    <div class="attribute">
+                        <span class="attribute-label">Species:</span>
+                        <span class="attribute-value">Neo-Lagomorph Rexis</span>
+                    </div>
+                    <div class="attribute">
+                        <span class="attribute-label">Species Status:</span>
+                        <span class="attribute-value">Endling</span>
+                    </div>
+                    <div class="attribute">
+                        <span class="attribute-label">Anomalous Type:</span>
+                        <span class="attribute-value">Non-Applicable</span>
+                    </div>				
+                </div>
+            </div>
+        </div>
+
+        <hr class="separator">
+        <h3 class="pi-data-label pi-secondary-font">Reproductive Biology and Gender</h3>
+        <div class="pi-data-value pi-font">
+            <div class="character-box">
+                <div class="character-attributes">
+                    <div class="attribute">
+                        <span class="attribute-label">Physiological Sex:</span>
+                        <span class="attribute-value">Simultaneous Hermaphrodite</span>
+                    </div>
+                    <div class="attribute">
+                        <span class="attribute-label">Gender Identity:</span>
+                        <span class="attribute-value">Genderless</span>
+                    </div>
+                    <div class="attribute">
+                        <span class="attribute-label">Reproductive Cycle:</span>
+                        <span class="attribute-value">5 Years</span>
+                    </div>
+                    <div class="attribute">
+                        <span class="attribute-label">Age of Maturity:</span>
+                        <span class="attribute-value">42 Years</span>
+                    </div>						
+                </div>
+            </div>
+        </div>
+    </div>
+	<div style="position: fixed; top: 20px; right: 20px; text-align: right;">
+    <a href="javascript:void(0);" onclick="window.history.back();" style="color: #1effa8; text-decoration: none; font-size: 1.2em;">Go back...</a>
+</div>
+</body>
+</html>
