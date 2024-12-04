@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Ward's Mainframe</title>
+    <title>Inspiration Archives</title>
     <style>
         @font-face {
             font-family: 'VT323';
@@ -37,6 +37,11 @@
             font-size: 3em; /* Increase font size to better fit pixel art style */
             margin: 0; /* Remove default margin */
         }
+		h3 {
+            color: #1effa8; /* Change text color */
+            font-size: 1.2em; /* Increase font size to better fit pixel art style */
+            margin: 0; /* Remove default margin */
+        }
 
         .social-icons {
             display: flex; /* Use flexbox for alignment */
@@ -55,8 +60,8 @@
 
         .panel {
 			font-size: 1.2em;
-            width: 320px; /* Set width for the panel */
-            height: 320px; /* Set height for the panel */
+            width: 800px; /* Set width for the panel */
+            height: 800px; /* Set height for the panel */
             position: absolute; /* Position absolute to center the panel */
             top: 50%; /* Center vertically */
             left: 50%; /* Center horizontally */
@@ -81,11 +86,6 @@
             font-family: 'VT323'; /* Use the same font as the title */
             margin: 5px 0; /* Add margin for spacing */
             color: #1effa8; /* Set font color to match the title */
-        }
-
-        .panel a {
-            color: white !important; /* Set link color to white, enforce with !important */
-            text-decoration: none; /* Remove underline */
         }
 
         .separator {
@@ -114,23 +114,38 @@
     </div>
     <div class="panel">
         <!-- Content inside the panel -->
-        <p>Welcome to the Ward's Main Frame!</p>
+        <p>Inspiration Archives</p>
         <p>You are required to have Officer Access Level [OA] or direct permission from the Warden. If you believe your granted access is a mistake, notify a superior officer immediately.</p>
         <div class="separator"></div>
-        <a href="archive-of-anomalies.html">
-            <p>Archive of Anomalies (EMPTY)</p>
-        </a>
-        <a href="personnel-database.html">
-            <p>Personnel Database</p>
-        </a>
-        <a href="personnel-database.html">
-            <p>PLACEHOLDER</p>
-        </a>
-        <a href="personnel-database.html">
-            <p>PLACEHOLDER</p>
-        </a>	
-        <a href="inspirations.html">
-            <p>Inspirations</p>
-        </a>		
+		<h3>Favorite Games</h3>
+        <p>Persona 3 FES</p>
+		<p>Shinobido: Way of the Ninja</p>
+		<p>Jet Set Radio</p>
+		<p>Lost Odyssey</p>
+		<p>Risk of Rain (1 and 2)</p>
+		<p>Fear & Hunger (1 and Termina)</p>
+		<div class="separator"></div>
+		<h3>RPG Games</h3>
+        <p>Dragon's Dogma: Dark Arisen</p>
+		<p>The Elder Scrolls Franchise</p>
+		<div class="separator"></div>
+		<h3>Horror Games</h3>
+		<p>Endless Blue</p>
+        <p>Blank Frame</p>
+        <p>Faith: The Unholy Trinity</p>
+		<p>Yume Nikki</p>
+		<div class="separator"></div>
+		<h3>Open World Survival Craft</h3>
+        <p>Core Keeper</p>
+		<p>Palworld</p>
+		<div class="separator"></div>
+		<h3>Co-op Games</h3>
+        <p>It Takes Two</p>
+		<div class="separator"></div>
+		
+    </div>
+	<div style="position: fixed; top: 20px; right: 20px; text-align: right;">
+    <a href="javascript:void(0);" onclick="window.history.back();" style="color: #1effa8; text-decoration: none; font-size: 1.2em;">Go back...</a>
+</div>
 </body>
 </html>
