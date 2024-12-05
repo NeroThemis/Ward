@@ -12,91 +12,126 @@
 
         body {
             background-image: url('visual-assets/global/web-background-image.png');
-            background-repeat: repeat; /* Ensure the image repeats */
-            background-size: auto; /* Keep original size of background tiles */
-            background-position: top left; /* Start from the top left */
+            background-repeat: repeat;
+            background-size: auto;
+            background-position: top left;
             margin: 0;
-            font-family: 'VT323', monospace; /* Apply the font to the body */
-            display: flex; /* Use flexbox to layout the header and panel */
-            justify-content: center; /* Center items horizontally */
-            align-items: center; /* Center items vertically */
-            height: 100vh; /* Full height of the viewport */
-            position: relative; /* Position relative for absolute positioning of children */
+            font-family: 'VT323', monospace; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            position: relative; 
         }
 
         .header-container {
-            position: absolute; /* Position absolute to allow free placement */
-            top: 20px; /* Distance from the top */
-            left: 20px; /* Distance from the left */
-            display: flex; /* Use flexbox for alignment */
-            align-items: center; /* Center items vertically */
+            position: absolute; 
+            top: 20px; 
+            left: 20px; 
+            display: flex; 
+            align-items: center; 
         }
 
         h1 {
-            color: #1effa8; /* Change text color */
-            font-size: 3em; /* Increase font size to better fit pixel art style */
-            margin: 0; /* Remove default margin */
+            color: #1effa8; 
+            font-size: 3em; 
+            margin: 0;
         }
-		h3 {
-            color: #1effa8; /* Change text color */
-            font-size: 1.2em; /* Increase font size to better fit pixel art style */
-            margin: 0; /* Remove default margin */
+
+        h3 {
+            color: #1effa8; 
+            font-size: 1.2em; 
+            margin: 0; 
         }
 
         .social-icons {
-            display: flex; /* Use flexbox for alignment */
-            align-items: center; /* Center items vertically */
-            margin-left: 10px; /* Space between title and icons */
+            display: flex; 
+            align-items: center; 
+            margin-left: 10px; 
         }
 
         .social-icons img {
-            width: 64px; /* Set width to match larger pixel size */
-            height: 64px; /* Set height to match larger pixel size */
-            margin-left: 5px; /* Space between icons */
-            cursor: pointer; /* Change cursor to pointer on hover */
-            image-rendering: pixelated; /* Ensure pixel art is rendered sharply */
-            image-rendering: crisp-edges; /* Alternative option */
+            width: 64px; 
+            height: 64px; 
+            margin-left: 5px; 
+            cursor: pointer; 
+            image-rendering: pixelated; 
+            image-rendering: crisp-edges; 
         }
 
         .panel {
-			font-size: 1.2em;
-            width: 800px; /* Set width for the panel */
-            height: 800px; /* Set height for the panel */
-            position: absolute; /* Position absolute to center the panel */
-            top: 50%; /* Center vertically */
-            left: 50%; /* Center horizontally */
-            transform: translate(-50%, -50%); /* Adjust position to perfectly center */
-            padding: 10px; /* Add padding for content spacing */
-            box-sizing: border-box; /* Include padding in width/height */
-            background-color: rgba(0, 0, 0, 0.7); /* Background color with some transparency */
-            margin: -5px; /* Negative margin to "remove" corners */
-            border: 5px solid transparent; /* Transparent border */
+            font-size: 1.2em;
+            width: 800px; 
+            height: 800px; 
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            padding: 10px; 
+            box-sizing: border-box; 
+            background-color: rgba(0, 0, 0, 0.7); 
+            margin: -5px; 
+            border: 5px solid transparent; 
         }
 
         .panel::before {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            border: 5px solid #1effa8; /* Outline color */
-            border-radius: 0; /* Keep corners sharp */
-            z-index: -1; /* Place behind the panel */
+            border: 5px solid #1effa8; 
+            border-radius: 0; 
+            z-index: -1; 
         }
 
         .panel p {
-            font-family: 'VT323'; /* Use the same font as the title */
-            margin: 5px 0; /* Add margin for spacing */
-            color: #1effa8; /* Set font color to match the title */
+            font-family: 'VT323'; 
+            margin: 5px 0; 
+            color: #1effa8; 
         }
 
         .separator {
-            border-top: 1px solid #1effa8; /* Separator line color */
-            margin: 10px 0; /* Margin around the separator */
+            border-top: 1px solid #1effa8; 
+            margin: 10px 0; 
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            background: #1effa8;
+			font-family: 'VT323';
+			font-size: 1.2em;
+            color: black;
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .tab-content {
+            display: none; /* Hide all content by default */
+        }
+
+        .tab-content.active {
+            display: block; /* Show active content */
         }
     </style>
+    <script>
+        function showTab(tabName) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => {
+                content.classList.remove('active'); // Hide all contents
+            });
+            document.getElementById(tabName).classList.add('active'); // Show the selected content
+        }
+    </script>
 </head>
 <body>
     <div class="header-container">
-        <h1>Ward's Mainframe</h1> <!-- Title added here -->
+        <h1>Ward's Mainframe</h1>
         <div class="social-icons">
             <a href="https://bsky.app/profile/nerothemis.bsky.social" target="_blank">
                 <img src="visual-assets/global/social-media-icon1.png" alt="Social Media Icon 1">
@@ -113,39 +148,58 @@
         </div>
     </div>
     <div class="panel">
-        <!-- Content inside the panel -->
-        <p>Inspiration Archives</p>
-        <p>You are required to have Officer Access Level [OA] or direct permission from the Warden. If you believe your granted access is a mistake, notify a superior officer immediately.</p>
-        <div class="separator"></div>
-		<h3>Favorite Games</h3>
-        <p>Persona 3 FES</p>
-		<p>Shinobido: Way of the Ninja</p>
-		<p>Jet Set Radio</p>
-		<p>Lost Odyssey</p>
-		<p>Risk of Rain (1 and 2)</p>
-		<p>Fear & Hunger (1 and Termina)</p>
-		<div class="separator"></div>
-		<h3>RPG Games</h3>
-        <p>Dragon's Dogma: Dark Arisen</p>
-		<p>The Elder Scrolls Franchise</p>
-		<div class="separator"></div>
-		<h3>Horror Games</h3>
-		<p>Endless Blue</p>
-        <p>Blank Frame</p>
-        <p>Faith: The Unholy Trinity</p>
-		<p>Yume Nikki</p>
-		<div class="separator"></div>
-		<h3>Open World Survival Craft</h3>
-        <p>Core Keeper</p>
-		<p>Palworld</p>
-		<div class="separator"></div>
-		<h3>Co-op Games</h3>
-        <p>It Takes Two</p>
-		<div class="separator"></div>
-		
+        <div class="tabs">
+            <button class="tab" onclick="showTab('games')">Games</button>
+            <button class="tab" onclick="showTab('amateur-horror')">Amateur Horror</button>
+            <button class="tab" onclick="showTab('movies')">Movies</button>
+            <button class="tab" onclick="showTab('music')">Music</button>
+        </div>
+        
+        <div id="games" class="tab-content active">
+            <p>Inspiration Archives</p>
+            <p>You are required to have Officer Access Level [OA] or direct permission from the Warden. If you believe your granted access is a mistake, notify a superior officer immediately.</p>
+            <div class="separator"></div>
+            <h3>Favorite Games</h3>
+            <p>Persona 3 FES</p>
+            <p>Shinobido: Way of the Ninja</p>
+            <p>Jet Set Radio</p>
+            <p>Lost Odyssey</p>
+            <p>Risk of Rain (1 and 2)</p>
+            <p>Fear & Hunger (1 and Termina)</p>
+            <div class="separator"></div>
+            <h3>RPG Games</h3>
+            <p>Dragon's Dogma: Dark Arisen</p>
+            <p>The Elder Scrolls Franchise</p>
+            <div class="separator"></div>
+            <h3>Horror Games</h3>
+            <p>Endless Blue</p>
+            <p>Blank Frame</p>
+            <p>Faith: The Unholy Trinity</p>
+            <p>Yume Nikki</p>
+            <div class="separator"></div>
+            <h3>Open World Survival Craft</h3>
+            <p>Core Keeper</p>
+            <p>Palworld</p>
+            <div class="separator"></div>
+            <h3>Co-op Games</h3>
+            <p>It Takes Two</p>
+            <div class="separator"></div>
+        </div>
+
+        <div id="amateur-horror" class="tab-content">
+            <p>This is the Amateur Horror category. More information will be added soon.</p>
+        </div>
+
+        <div id="movies" class="tab-content">
+            <p>This is the Movies category. More information will be added soon.</p>
+        </div>
+
+        <div id="music" class="tab-content">
+            <p>This is the Music category. More information will be added soon.</p>
+        </div>
     </div>
-	<div style="position: fixed; top: 20px; right: 20px; text-align: right;">
-    <a href="javascript:void(0);" onclick="window.history.back();" style="color: #1effa8; text-decoration: none; font-size: 1.2em;">Go back...</a>
-</div>
+    <div style="position: fixed; top: 20px; right: 20px; text-align: right;">
+        <a href="javascript:void(0);" onclick="window.history.back();" style="color: #1effa8; text-decoration: none; font-size: 1.2em;">Go back...</a>
+    </div>
 </body>
 </html>
