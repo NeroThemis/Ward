@@ -5,6 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Archive of Anomalies</title>
     <link rel="stylesheet" href="../styles.css">
+
+    <div id="header-placeholder"></div> <!-- Placeholder for the header -->
+    
+    <script>
+        // Load the header
+        fetch('../../main-header.html') // This path is correct if file01-the-warden.html is in a subfolder
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+        });
+    </script>
+
     <style>
         body {
             display: flex; /* Enable Flexbox for the body */
@@ -65,24 +85,6 @@
     </style>
 </head>
 <body>
-    <div id="header-placeholder"></div> <!-- Placeholder for the header -->
-    
-    <script>
-        // Load the header
-        fetch('../../main-header.html') // This path is correct if file01-the-warden.html is in a subfolder
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok ' + response.statusText);
-            }
-            return response.text();
-        })
-        .then(data => {
-            document.getElementById('header-placeholder').innerHTML = data;
-        })
-        .catch(error => {
-            console.error('There was a problem with the fetch operation:', error);
-        });
-    </script>
 
     <div class="file-01-panel">
         <h2 class="file-report">Personnel File Report</h2>
