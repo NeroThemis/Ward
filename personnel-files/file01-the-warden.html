@@ -5,24 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Archive of Anomalies</title>
     <link rel="stylesheet" href="../styles.css">
-    <div id="header-placeholder"></div>
-    <script>
-        // Load the header
-        fetch('../main-header.html')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok ' + response.statusText);
-            }
-            return response.text();
-        })
-        .then(data => {
-            document.getElementById('header-placeholder').innerHTML = data;
-        })
-        .catch(error => {
-            console.error('There was a problem with the fetch operation:', error);
-        });
-    </script>
-
     <style>
         body {
             display: flex; /* Enable Flexbox for the body */
@@ -83,6 +65,25 @@
     </style>
 </head>
 <body>
+    <div id="header-placeholder"></div> <!-- Placeholder for the header -->
+    
+    <script>
+        // Load the header
+        fetch('../../main-header.html') // This path is correct if file01-the-warden.html is in a subfolder
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+        });
+    </script>
+
     <div class="file-01-panel">
         <h2 class="file-report">Personnel File Report</h2>
         <p>In light of the Personnel Database being impartial, this file is being written by an Officer and not the Warden themselves. It will be fact-checked and reviewed by a council before publishing.</p>
