@@ -1,0 +1,112 @@
+@font-face {
+    font-family: 'VT323';
+    src: url('visual-assets/font/VT323-Regular.ttf') format('truetype');
+}
+
+body {
+    font-family: 'VT323', monospace;
+    background-image: url('visual-assets/global/web-background-image.png');
+    background-repeat: repeat; /* Tiling the background */
+    margin: 0;
+    padding: 0;
+}
+
+/* styles.css */
+a {
+    color: #1effa8; /* Normal link color */
+    text-decoration: none; /* Optional: remove underline from links */
+}
+
+a:hover,
+a:active {
+    color: white; /* Hover and active link color */
+}
+
+header {
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack title and icons vertically */
+    align-items: center; /* Center items horizontally */
+    font-size: 2em;
+    font-weight: bold;
+    padding: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0.05em;
+}
+
+h1 {
+    color: #1effa8;
+    margin: 0; /* Remove default margin */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Space between icons */
+    margin: 10px 0; /* Add margin to separate from title */
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab {
+    background: #1effa8;
+    font-family: 'VT323';
+    font-size: 1.2em;
+    color: black;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    border: none;
+}
+
+.tab-content {
+    display: none; /* Hide all content by default */
+}
+
+.tab-content.active {
+    display: block; /* Show active content */
+}
+
+.separator {
+    border-top: 6px solid #1effa8; /* Separator line color */
+    margin: 10px 0; /* Margin around the separator */
+}
+
+.panel {
+    font-size: 1.2em;
+    max-width: 440px; /* Set maximum width for the panel */
+    max-height: 640px; /* Set maximum height for the panel */
+    position: absolute; /* Position absolute to center the panel */
+    top: calc(50% - 120px); /* Adjust this value based on header height */
+    left: 50%; /* Center horizontally */
+    color: #1effa8;
+    transform: translate(-50%, -50%); /* Adjust position to perfectly center */
+    padding: 10px; /* Add padding for content spacing */
+    box-sizing: border-box; /* Include padding in width/height */
+    background-color: rgba(0, 0, 0, 0.7); /* Background color with some transparency */
+    margin: -5px; /* Negative margin to "remove" corners */
+    border: 5px solid transparent; /* Transparent border */
+    overflow: auto; /* Add scrollbars if content exceeds max height */
+}
+
+.panel::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border: 5px solid #1effa8; /* Outline color */
+    border-radius: 0; /* Keep corners sharp */
+    z-index: -1; /* Place behind the panel */
+}
+
+.social-icons img {
+    width: 64px; /* Adjust size as needed */
+    height: 64px;
+    cursor: pointer;
+    image-rendering: pixelated; /* Ensure pixel art is rendered sharply */
+    image-rendering: crisp-edges; /* Alternative option */    
+}

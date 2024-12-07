@@ -3,116 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="stylesheet" href="styles.css">
+<div id="header-placeholder"></div>
+<script>
+            // Load the header
+            fetch('main-header.html')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+        });
+</script>
     <title>Personnel Database</title>
-    <style>
-        @font-face {
-            font-family: 'VT323';
-            src: url('visual-assets/font/VT323-Regular.ttf') format('truetype');
-        }
-
-        body {
-            background-image: url('visual-assets/global/web-background-image.png');
-            background-repeat: repeat; /* Ensure the image repeats */
-            background-size: auto; /* Keep original size of background tiles */
-            background-position: top left; /* Start from the top left */
-            margin: 0;
-            font-family: 'VT323', monospace; /* Apply the font to the body */
-            display: flex; /* Use flexbox to layout the header and panel */
-            justify-content: center; /* Center items horizontally */
-            align-items: center; /* Center items vertically */
-            height: 100vh; /* Full height of the viewport */
-            position: relative; /* Position relative for absolute positioning of children */
-        }
-
-        .header-container {
-            position: absolute; /* Position absolute to allow free placement */
-            top: 20px; /* Distance from the top */
-            left: 20px; /* Distance from the left */
-            display: flex; /* Use flexbox for alignment */
-            align-items: center; /* Center items vertically */
-        }
-
-        h1 {
-            color: #1effa8; /* Change text color */
-            font-size: 3em; /* Increase font size to better fit pixel art style */
-            margin: 0; /* Remove default margin */
-        }
-
-        .social-icons {
-            display: flex; /* Use flexbox for alignment */
-            align-items: center; /* Center items vertically */
-            margin-left: 10px; /* Space between title and icons */
-        }
-
-        .social-icons img {
-            width: 64px; /* Set width to match larger pixel size */
-            height: 64px; /* Set height to match larger pixel size */
-            margin-left: 5px; /* Space between icons */
-            cursor: pointer; /* Change cursor to pointer on hover */
-            image-rendering: pixelated; /* Ensure pixel art is rendered sharply */
-            image-rendering: crisp-edges; /* Alternative option */
-        }
-
-        .panel {
-			font-size: 1.2em;
-            width: 320px; /* Set width for the panel */
-            height: 240px; /* Set height for the panel */
-            position: absolute; /* Position absolute to center the panel */
-            top: 50%; /* Center vertically */
-            left: 50%; /* Center horizontally */
-            transform: translate(-50%, -50%); /* Adjust position to perfectly center */
-            padding: 10px; /* Add padding for content spacing */
-            box-sizing: border-box; /* Include padding in width/height */
-            background-color: rgba(0, 0, 0, 0.7); /* Background color with some transparency */
-            margin: -5px; /* Negative margin to "remove" corners */
-            border: 5px solid transparent; /* Transparent border */
-        }
-
-        .panel::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            border: 5px solid #1effa8; /* Outline color */
-            border-radius: 0; /* Keep corners sharp */
-            z-index: -1; /* Place behind the panel */
-        }
-
-        .panel p {
-            font-family: 'VT323'; /* Use the same font as the title */
-            margin: 5px 0; /* Add margin for spacing */
-            color: #1effa8; /* Set font color to match the title */
-        }
-
-        .separator {
-            border-top: 1px solid #1effa8; /* Separator line color */
-            margin: 10px 0; /* Margin around the separator */
-        }
-    </style>
 </head>
+
+    <style>
+
+.p-d-panel {
+    font-size: 1.2em;
+    max-width: 440px; /* Set maximum width for the panel */
+    max-height: 640px; /* Set maximum height for the panel */
+    position: absolute; /* Position absolute to center the panel */
+    top: calc(50% - 120px); /* Adjust this value based on header height */
+    left: 50%; /* Center horizontally */
+    color: #1effa8;
+    transform: translate(-50%, -50%); /* Adjust position to perfectly center */
+    padding: 10px; /* Add padding for content spacing */
+    box-sizing: border-box; /* Include padding in width/height */
+    background-color: rgba(0, 0, 0, 0.7); /* Background color with some transparency */
+    margin: -5px; /* Negative margin to "remove" corners */
+    border: 5px solid transparent; /* Transparent border */
+    overflow: auto; /* Add scrollbars if content exceeds max height */
+}
+
+.p-d-panel::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border: 5px solid #1effa8; /* Outline color */
+    border-radius: 0; /* Keep corners sharp */
+    z-index: -1; /* Place behind the panel */
+}
+
+    </style>
+
 <body>
-    <div class="header-container">
-        <h1>Ward's Mainframe</h1> <!-- Title added here -->
-        <div class="social-icons">
-            <a href="https://bsky.app/profile/nerothemis.bsky.social" target="_blank">
-                <img src="visual-assets/global/social-media-icon1.png" alt="Social Media Icon 1">
-            </a>
-            <a href="https://nerothemis.newgrounds.com/" target="_blank">
-                <img src="visual-assets/global/social-media-icon2.png" alt="Social Media Icon 2">
-            </a>
-            <a href="https://discord.gg/QT5Xsp4CCk" target="_blank">
-                <img src="visual-assets/global/social-media-icon3.png" alt="Social Media Icon 3">
-            </a>
-            <a href="https://www.youtube.com/@NeroThemis" target="_blank">
-                <img src="visual-assets/global/social-media-icon4.png" alt="Social Media Icon 4">
-            </a>
-        </div>
-    </div>
-    <div class="panel">
+    <div class="p-d-panel">
         <!-- Content inside the panel -->
         <p>Personnel Database</p>
         <p>You are required to have Officer Access Level [OA] or direct permission from the Warden. If you believe your granted access is a mistake, notify a superior officer immediately.</p>
         <div class="separator"></div>
-		<a href="personnel-files/file01-the-warden.html" style="color: white; text-decoration: none;">
+		<a href="personnel-files/file01-the-warden.html">
         <p>File 01 - Nero the Warden</p>
     </a>	
     </div>

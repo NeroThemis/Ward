@@ -4,77 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inspiration Archives</title>
-    <style>
-        @font-face {
-            font-family: 'VT323';
-            src: url('visual-assets/font/VT323-Regular.ttf') format('truetype');
+    <script>
+        function showTab(tabName) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => {
+                content.classList.remove('active'); // Hide all contents
+            });
+            document.getElementById(tabName).classList.add('active'); // Show the selected content
+        }
+    </script>
+
+
+
+</head>
+
+<link rel="stylesheet" href="styles.css">
+<div id="header-placeholder"></div>
+<script>
+            // Load the header
+            fetch('main-header.html')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+        });
+</script>
+
+<style>
+        
+        .insp-panel {
+        font-size: 1.2em;
+        width: 800px; 
+        height: 1000px; 
+        position: absolute; 
+        top: calc(50% + 190px); /* Adjust this value to create space below the header */
+        left: 50%; 
+        transform: translate(-50%, -50%); 
+        padding: 10px; 
+        box-sizing: border-box; 
+        background-color: rgba(0, 0, 0, 0.7); 
+        margin: -5px; 
+        border: 5px solid transparent; 
         }
 
-        body {
-            background-image: url('visual-assets/global/web-background-image.png');
-            background-repeat: repeat;
-            background-size: auto;
-            background-position: top left;
-            margin: 0;
-            font-family: 'VT323', monospace; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            height: 100vh; 
-            position: relative; 
-        }
-
-        .header-container {
-            position: absolute; 
-            top: 20px; 
-            left: 20px; 
-            display: flex; 
-            align-items: center; 
-        }
-
-        h1 {
-            color: #1effa8; 
-            font-size: 3em; 
-            margin: 0;
-        }
-
-        h3 {
-            color: #1effa8; 
-            font-size: 1.2em; 
-            margin: 0; 
-        }
-
-        .social-icons {
-            display: flex; 
-            align-items: center; 
-            margin-left: 10px; 
-        }
-
-        .social-icons img {
-            width: 64px; 
-            height: 64px; 
-            margin-left: 5px; 
-            cursor: pointer; 
-            image-rendering: pixelated; 
-            image-rendering: crisp-edges; 
-        }
-
-        .panel {
-            font-size: 1.2em;
-            width: 800px; 
-            height: 800px; 
-            position: absolute; 
-            top: 50%; 
-            left: 50%; 
-            transform: translate(-50%, -50%); 
-            padding: 10px; 
-            box-sizing: border-box; 
-            background-color: rgba(0, 0, 0, 0.7); 
-            margin: -5px; 
-            border: 5px solid transparent; 
-        }
-
-        .panel::before {
+        .insp-panel::before {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
@@ -83,15 +63,10 @@
             z-index: -1; 
         }
 
-        .panel p {
+        .insp-panel p {
             font-family: 'VT323'; 
             margin: 5px 0; 
             color: #1effa8; 
-        }
-
-        .separator {
-            border-top: 1px solid #1effa8; 
-            margin: 10px 0; 
         }
 
         .tabs {
@@ -118,36 +93,16 @@
         .tab-content.active {
             display: block; /* Show active content */
         }
-    </style>
-    <script>
-        function showTab(tabName) {
-            const contents = document.querySelectorAll('.tab-content');
-            contents.forEach(content => {
-                content.classList.remove('active'); // Hide all contents
-            });
-            document.getElementById(tabName).classList.add('active'); // Show the selected content
+        h3 {
+            color: #1effa8; 
+            font-size: 1.2em; 
+            margin: 0; 
         }
-    </script>
-</head>
+
+</style>
+
 <body>
-    <div class="header-container">
-        <h1>Ward's Mainframe</h1>
-        <div class="social-icons">
-            <a href="https://bsky.app/profile/nerothemis.bsky.social" target="_blank">
-                <img src="visual-assets/global/social-media-icon1.png" alt="Social Media Icon 1">
-            </a>
-            <a href="https://nerothemis.newgrounds.com/" target="_blank">
-                <img src="visual-assets/global/social-media-icon2.png" alt="Social Media Icon 2">
-            </a>
-            <a href="https://discord.gg/QT5Xsp4CCk" target="_blank">
-                <img src="visual-assets/global/social-media-icon3.png" alt="Social Media Icon 3">
-            </a>
-            <a href="https://www.youtube.com/@NeroThemis" target="_blank">
-                <img src="visual-assets/global/social-media-icon4.png" alt="Social Media Icon 4">
-            </a>
-        </div>
-    </div>
-    <div class="panel">
+    <div class="insp-panel">
         <div class="tabs">
             <button class="tab" onclick="showTab('games')">Games</button>
             <button class="tab" onclick="showTab('amateur-horror')">Amateur Horror</button>
@@ -198,8 +153,10 @@
             <p>This is the Music category. More information will be added soon.</p>
         </div>
     </div>
-    <div style="position: fixed; top: 20px; right: 20px; text-align: right;">
-        <a href="javascript:void(0);" onclick="window.history.back();" style="color: #1effa8; text-decoration: none; font-size: 1.2em;">Go back...</a>
-    </div>
 </body>
+
+<div id="go-back" style="position: fixed; top: 20px; right: 20px; text-align: right;">
+    <a href="javascript:void(0);" onclick="window.history.back();" style="color: #1effa8; text-decoration: none; font-size: 1.2em;">Go back...</a>
+</div>
+
 </html>
