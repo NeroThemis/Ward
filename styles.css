@@ -221,7 +221,7 @@ h1 {
 /* Initial state for the terminal data scan image */
 .terminal-data-scan {
     display: block; /* Set the initial display state */
-    margin-left: 20px;
+    margin-left: 40px;
     margin-right: 20px;
     width: 400px;
     height: auto;
