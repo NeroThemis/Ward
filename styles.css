@@ -181,3 +181,44 @@ h1 {
         font-size: 0.9em; /* Further reduce font sizes */
     }
 }
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .insp-panel {
+        font-size: 1em; /* Adjust font size */
+        width: 90%; /* Make width responsive */
+        height: auto; /* Allow height to adjust */
+        top: calc(50% + 100px); /* Adjust positioning */
+        padding: 10px; /* Maintain padding */
+    }
+
+    .tabs {
+        flex-direction: column; /* Stack tabs vertically on smaller screens */
+        align-items: center; /* Center align tabs */
+    }
+
+    .tab {
+        font-size: 1em; /* Adjust tab font size */
+        padding: 8px 16px; /* Adjust padding */
+        margin: 5px 0; /* Adjust margin */
+    }
+
+    h3 {
+        font-size: 1em; /* Adjust heading font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .insp-panel {
+        font-size: 0.9em; /* Further reduce font size */
+        padding: 5px; /* Reduce padding */
+    }
+
+    .tab {
+        padding: 6px 12px; /* Further adjust tab padding */
+    }
+
+    h3 {
+        font-size: 0.9em; /* Further reduce heading font size */
+    }
+}
