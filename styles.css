@@ -25,10 +25,11 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
     font-size: 2em;
     font-weight: bold;
     margin-bottom: -20px;
-    padding: 20px;
+    padding-bottom: 1px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -92,7 +93,6 @@ h1 {
     box-sizing: border-box;
     background-color: rgba(0, 0, 0, 0.7);
     margin: -5px;
-    margin-top: -120px;
     border: 5px solid transparent;
     overflow: auto;
 }
@@ -112,6 +112,35 @@ h1 {
     cursor: pointer;
     image-rendering: pixelated;
     image-rendering: crisp-edges;    
+}
+
+@media (max-width: 375px) {
+    /* Adjust header */
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative; /* Added to ensure proper positioning of child elements */
+        font-size: 2em;
+        font-weight: bold;
+        margin-bottom: -20px;
+        padding-bottom: 10px;
+    }
+
+    /* Adjust the panel positioning */
+    .panel {
+        font-size: 1.2em;
+        max-width: 90%;
+        margin-top: 80px; /* Adjusted for more space between header and panel */
+        position: relative; /* Changed to relative to avoid absolute positioning */
+        top: auto; /* Removed previous 'top: 90%' to control spacing with margin-top */
+        left: 50%;
+        transform: translateX(-50%); /* Ensures horizontal centering */
+    }
+
+    .panel {
+        transform: translateX(-50%) translateY(-80px); /* Adjust translateY for vertical movement */
+    }
 }
 
 /* Media Queries for Responsive Design */
