@@ -41,7 +41,7 @@
         
         .insp-panel {
         font-size: 1.2em;
-        width: 320px; 
+        width: 420px; 
         height: 1000px; 
         position: absolute; 
         top: calc(50% + 190px); /* Adjust this value to create space below the header */
@@ -72,7 +72,8 @@
         .tabs {
             display: flex;
             justify-content: center;
-            margin-bottom: 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
         }
 
         .tab {
@@ -81,7 +82,7 @@
 			font-size: 1.2em;
             color: black;
             padding: 10px 20px;
-            margin: 0 5px;
+            margin: 5px 5px;
             cursor: pointer;
             border: none;
         }
@@ -99,6 +100,20 @@
             margin: 0; 
         }
 
+
+        
+        .insp-panel a {
+            color: #1effa8; /* Default color */
+            display: block; /* Make links block-level elements */
+            margin-top: 10px;
+            margin-bottom: 10px; /* Optional: Add some space between links */
+        }
+
+        .insp-panel a:hover,
+        .insp-panel a:active {
+            color: white; /* Color on hover and active */
+        }
+
 </style>
 
 <body>
@@ -108,6 +123,7 @@
             <button class="tab" onclick="showTab('amateur-horror')">Amateur Horror</button>
             <button class="tab" onclick="showTab('movies')">Movies</button>
             <button class="tab" onclick="showTab('music')">Music</button>
+            <button class="tab" onclick="showTab('people')">People</button>
         </div>
         
         <div id="games" class="tab-content active">
@@ -150,8 +166,36 @@
         </div>
 
         <div id="music" class="tab-content">
-            <p>This is the Music category. More information will be added soon.</p>
+            <p>Inspiration Archives</p>
+            <p>You are required to have Officer Access Level [OA] or direct permission from the Warden. If you believe your granted access is a mistake, notify a superior officer immediately.</p>
+            <div class="separator"></div>
+            <h3>Nero's Disco</h3>
+            <p>Nero has a Official Telegram Channel called "Disco", which is used to store links from across different websites of songs of their liking.</p>
+            <a href="https://t.me/officialdisco" title="Disco">
+                <span>Disco (Telegram Channel)</span>
+            </a>
+            <div class="separator"></div>
         </div>
+        <div id="people" class="tab-content">
+            <p>Inspiration Archives</p>
+            <p>You are required to have Officer Access Level [OA] or direct permission from the Warden. If you believe your granted access is a mistake, notify a superior officer immediately.</p>
+            <div class="separator"></div>
+        
+            <h3>Under Arrest</h3>
+            <a href="https://bsky.app/profile/yatozhr.bsky.social" title="Biggest Hater">
+                <span>Yato Hanzo (Wild Salamander)</span>
+            </a>
+            <div class="separator"></div>
+            <h3>Under Investigation</h3>
+            <a href="https://www.twitch.tv/aethersomnable/about" title="Pink Emo Jesus">
+                <span>Aethersomnable (Entertainer)</span>
+            </a>
+
+            <a href="https://www.twitch.tv/0Lock0" title="Big Cog Lock">
+                <span>Lock (Robot)</span>
+            </a>
+        </div>
+        
     </div>
 </body>
 
