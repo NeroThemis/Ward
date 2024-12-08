@@ -21,8 +21,7 @@
 <link rel="stylesheet" href="styles.css">
 <div id="header-placeholder"></div>
 <script>
-            // Load the header
-            fetch('main-header.html')
+    fetch('main-header.html')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok ' + response.statusText);
@@ -31,10 +30,26 @@
         })
         .then(data => {
             document.getElementById('header-placeholder').innerHTML = data;
+            hideImageOnMobile();  // Ensure the function is called after content is injected
+            window.addEventListener('resize', hideImageOnMobile); // Adjust on resize
         })
         .catch(error => {
             console.error('There was a problem with the fetch operation:', error);
         });
+
+    function hideImageOnMobile() {
+        const image = document.querySelector('.terminal-data-scan');
+        const width = window.innerWidth;
+        console.log('Current width:', width); // Debugging log
+
+        if (width <= 768) {
+            image.style.setProperty('display', 'none', 'important'); // Force hide on mobile
+            console.log('Image hidden'); // Debugging log
+        } else {
+            image.style.setProperty('display', 'block', 'important'); // Force show on larger screens
+            console.log('Image shown'); // Debugging log
+        }
+    }
 </script>
 
 <style>
