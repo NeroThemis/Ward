@@ -28,4 +28,34 @@
         </div>
     </header>
 </body>
+<div>
+<img class="terminal-data-scan" src="visual-assets/global/data-scan-terminal-animation.gif" alt="Data Scan Pixel Art Animation">
+
+<script>
+    function hideImageOnMobile() {
+        const image = document.querySelector('.terminal-data-scan');
+        if (window.innerWidth <= 768) {
+            image.style.display = 'none';
+        } else {
+            image.style.display = 'block'; // Show it again on larger screens
+        }
+    }
+
+    // Run on initial load
+    hideImageOnMobile();
+
+    // Add event listener for window resize
+    window.addEventListener('resize', hideImageOnMobile);
+</script>
+</div>
+<!--
+SSTA (Scanning Satellite Terminal Access)
+VRS (Visual Rendering System)
+RAW (Live/Unedited Footage)
+
+DR (Data Register)
+DB (Database)
+ND (New Data)
+FD (Finished Data)
+-->
 </html>

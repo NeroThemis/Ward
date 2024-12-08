@@ -44,14 +44,14 @@ h1 {
     justify-content: center;
     gap: 10px;
     margin: 10px 0;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    flex-wrap: wrap;
 }
 
 .tabs {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    flex-wrap: wrap;
 }
 
 .tab {
@@ -80,8 +80,8 @@ h1 {
 
 .panel {
     font-size: 1.2em;
-    max-width: 440px;
-    max-height: 80vh; /* Use viewport height for responsive design */
+    max-width: 640px;
+    max-height: 80vh;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -91,6 +91,7 @@ h1 {
     box-sizing: border-box;
     background-color: rgba(0, 0, 0, 0.7);
     margin: -5px;
+    margin-top: -120px;
     border: 5px solid transparent;
     overflow: auto;
 }
@@ -115,110 +116,117 @@ h1 {
 /* Media Queries for Responsive Design */
 @media (max-width: 768px) {
     header {
-        font-size: 1.5em; /* Adjust header font size */
+        font-size: 1.5em;
     }
 
     .tab {
-        font-size: 1em; /* Adjust tab font size */
-        padding: 8px 16px; /* Adjust padding */
+        font-size: 1.2em;
+        padding: 8px 16px;
     }
 
     .panel {
-        font-size: 1em; /* Adjust panel font size */
-        max-width: 90%; /* Make panel width responsive */
+        font-size: 1.2em;
+        max-width: 90%;
+        margin-top: 0px;
     }
 
     .social-icons img {
-        width: 48px; /* Smaller icon size */
+        width: 48px;
         height: 48px; 
     }
-}
-/* Media Queries for Responsive Design */
-@media (max-width: 768px) {
+
     body {
-        flex-direction: column; /* Stack items vertically on smaller screens */
-        align-items: center; /* Center items */
+        flex-direction: column;
+        align-items: center;
     }
 
     .entry-01-panel, .file-01-secondary-panel {
-        max-width: 100%; /* Allow full width on small screens */
-        margin: 10px 0; /* Margin adjustments */
+        max-width: 100%;
+        margin: 10px 0;
     }
 
     .entry-01-panel {
-        font-size: 1em; /* Reduce font size */
+        font-size: 1em;
     }
 
     .entry-01-secondary-panel {
-        max-width: 100%; /* Allow full width on small screens */
-        font-size: 1em; /* Reduce font size */
+        max-width: 100%;
+        font-size: 1.2em;
     }
 
     .entry-01-panel p, .entry-01-panel blockquote {
-        font-size: 1em; /* Adjust font size */
+        font-size: 1.2em;
     }
 
     h2, h3, li {
-        font-size: 1em; /* Adjust header and list item font sizes */
+        font-size: 1.2em;
     }
 
     .entry-local-images img {
-        width: 100%; /* Make images responsive */
-        height: auto; /* Maintain aspect ratio */
+        width: 100%;
+        height: auto;
+    }
+
+    .insp-panel {
+        font-size: 1.2em;
+        width: 90%;
+        height: auto;
+        top: calc(50% + 100px);
+        padding: 10px;
+    }
+
+    .tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tab {
+        font-size: 1.2em;
+        padding: 8px 16px;
+        margin: 5px 0;
+    }
+
+    h3 {
+        font-size: 1.2em;
     }
 }
 
 @media (max-width: 480px) {
     .entry-01-panel, .file-01-secondary-panel {
-        padding: 10px; /* Reduce padding for smaller screens */
+        padding: 10px;
     }
 
     .entry-01-panel {
-        margin: 20px 0; /* Adjust margins */
+        margin: 20px 0;
     }
 
     h2, h3, li {
-        font-size: 0.9em; /* Further reduce font sizes */
+        font-size: 1.2em;
     }
-}
 
-/* Media Queries for Responsive Design */
-@media (max-width: 768px) {
     .insp-panel {
-        font-size: 1.2em; /* Adjust font size */
-        width: 90%; /* Make width responsive */
-        height: auto; /* Allow height to adjust */
-        top: calc(50% + 100px); /* Adjust positioning */
-        padding: 10px; /* Maintain padding */
-    }
-
-    .tabs {
-        flex-direction: column; /* Stack tabs vertically on smaller screens */
-        align-items: center; /* Center align tabs */
+        font-size: 1.2em;
+        padding: 5px;
     }
 
     .tab {
-        font-size: 1.2em; /* Adjust tab font size */
-        padding: 8px 16px; /* Adjust padding */
-        margin: 5px 0; /* Adjust margin */
+        padding: 6px 12px;
     }
 
     h3 {
-        font-size: 1.2em; /* Adjust heading font size */
+        font-size: 1.2em;
     }
 }
 
-@media (max-width: 480px) {
-    .insp-panel {
-        font-size: 0.9em; /* Further reduce font size */
-        padding: 5px; /* Reduce padding */
-    }
 
-    .tab {
-        padding: 6px 12px; /* Further adjust tab padding */
-    }
-
-    h3 {
-        font-size: 0.9em; /* Further reduce heading font size */
-    }
+.terminal-data-scan {
+    display: flex;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 400px;
+    height: auto;
+    transition: transform 0.3s;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    position: absolute;
 }
