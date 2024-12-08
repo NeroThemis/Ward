@@ -218,15 +218,14 @@ h1 {
     }
 }
 
-
+/* Initial state for the terminal data scan image */
 .terminal-data-scan {
-    display: flex;
-    margin-left: 40px;
+    display: block; /* Set the initial display state */
+    margin-left: 20px;
     margin-right: 20px;
     width: 400px;
     height: auto;
-    transition: transform 0.3s;
-    image-rendering: pixelated;
+    transition: transform 0.3s ease;
     image-rendering: crisp-edges;
-    position: absolute;
+    image-rendering: pixelated;
 }

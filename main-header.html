@@ -7,7 +7,6 @@
 </head>
 <body>
     <header style="padding: 20px; text-align: center;">
-
         <a href="https://nerothemis.github.io/Ward/index.html">
             <h1 style="color: #1effa8;">Ward's Mainframe</h1>
         </a>
@@ -27,35 +26,31 @@
             </a>
         </div>
     </header>
+
+    <img class="terminal-data-scan" src="visual-assets/global/data-scan-terminal-animation.gif" alt="Data Scan Pixel Art Animation">
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            function hideImageOnMobile() {
+                const image = document.querySelector('.terminal-data-scan');
+                const width = window.innerWidth;
+                console.log('Current width:', width); // Debugging log
+
+                if (width <= 768) {
+                    image.style.setProperty('display', 'none', 'important'); // Force hide on mobile
+                    console.log('Image hidden'); // Debugging log
+                } else {
+                    image.style.setProperty('display', 'block', 'important'); // Force show on larger screens
+                    console.log('Image shown'); // Debugging log
+                }
+            }
+
+            // Run on initial load
+            hideImageOnMobile();
+
+            // Add event listener for window resize
+            window.addEventListener('resize', hideImageOnMobile);
+        });
+    </script>
 </body>
-<div>
-<img class="terminal-data-scan" src="visual-assets/global/data-scan-terminal-animation.gif" alt="Data Scan Pixel Art Animation">
-
-<script>
-    function hideImageOnMobile() {
-        const image = document.querySelector('.terminal-data-scan');
-        if (window.innerWidth <= 768) {
-            image.style.display = 'none';
-        } else {
-            image.style.display = 'block'; // Show it again on larger screens
-        }
-    }
-
-    // Run on initial load
-    hideImageOnMobile();
-
-    // Add event listener for window resize
-    window.addEventListener('resize', hideImageOnMobile);
-</script>
-</div>
-<!--
-SSTA (Scanning Satellite Terminal Access)
-VRS (Visual Rendering System)
-RAW (Live/Unedited Footage)
-
-DR (Data Register)
-DB (Database)
-ND (New Data)
-FD (Finished Data)
--->
 </html>
