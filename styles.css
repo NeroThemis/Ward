@@ -185,7 +185,7 @@ h1 {
 /* Media Queries for Responsive Design */
 @media (max-width: 768px) {
     .insp-panel {
-        font-size: 1em; /* Adjust font size */
+        font-size: 1.2em; /* Adjust font size */
         width: 90%; /* Make width responsive */
         height: auto; /* Allow height to adjust */
         top: calc(50% + 100px); /* Adjust positioning */
@@ -198,13 +198,13 @@ h1 {
     }
 
     .tab {
-        font-size: 1em; /* Adjust tab font size */
+        font-size: 1.2em; /* Adjust tab font size */
         padding: 8px 16px; /* Adjust padding */
         margin: 5px 0; /* Adjust margin */
     }
 
     h3 {
-        font-size: 1em; /* Adjust heading font size */
+        font-size: 1.2em; /* Adjust heading font size */
     }
 }
 
