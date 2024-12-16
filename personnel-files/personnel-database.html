@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Archive of Anomalies</title>
-	<link rel="stylesheet" href="styles.css">
+	
+	<link rel="stylesheet" href="../styles.css">
 <div id="header-placeholder"></div>
 <script>
     fetch('main-header.html')
@@ -37,19 +37,47 @@
         }
     }
 </script>
-
+    <title>Personnel Database</title>
 </head>
+
+    <style>
+
+.p-d-panel {
+    font-size: 1.2em;
+    margin-top: 90px;
+    max-width: 440px; /* Set maximum width for the panel */
+    max-height: 640px; /* Set maximum height for the panel */
+    position: absolute; /* Position absolute to center the panel */
+    top: calc(50% - 120px); /* Adjust this value based on header height */
+    left: 50%; /* Center horizontally */
+    color: #1effa8;
+    transform: translate(-50%, -50%); /* Adjust position to perfectly center */
+    padding: 10px; /* Add padding for content spacing */
+    box-sizing: border-box; /* Include padding in width/height */
+    background-color: rgba(0, 0, 0, 0.7); /* Background color with some transparency */
+    border: 5px solid transparent; /* Transparent border */
+    overflow: auto; /* Add scrollbars if content exceeds max height */
+}
+
+.p-d-panel::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border: 5px solid #1effa8; /* Outline color */
+    border-radius: 0; /* Keep corners sharp */
+    z-index: -1; /* Place behind the panel */
+}
+
+    </style>
+
 <body>
-    <div class="panel">
+    <div class="p-d-panel">
         <!-- Content inside the panel -->
         <p>Personnel Database</p>
         <p>You are required to have Officer Access Level [OA] or direct permission from the Warden. If you believe your granted access is a mistake, notify a superior officer immediately.</p>
         <div class="separator"></div>
-        <a href="anomaly-entries/entry01-crown-bearer.html">
-            <p>Entry 01 - Hoa P'sher</p>
-        </a>
-        <a href="anomaly-entries/entry02-wardens-nuisance.html">
-            <p>Entry 02 - Order of the Watcher</p>
+		<a href="file01-the-warden.html">
+        <p>File 01 - Nero the Warden</p>
         </a>
         <a href="">
             <p>REDACTED</p>
@@ -57,19 +85,13 @@
         <a href="">
             <p>REDACTED</p>
         </a>    
-        <a href="anomaly-entries/entry05-haze-vulture.html">
-            <p>Entry 05 - Orbearer</p>
-        </a>
-        <a href="anomaly-entries/entry06-emotivore-seedling.html">
-            <p>Entry 06 - Affectus</p>
-        </a>
-        <a href="anomaly-entries/entry142-cogbound-blight.html">
-            <p>Entry 142 - Jeremiah Smith</p>
-        </a>
+        <a href="">
+            <p>REDACTED</p>
+        </a>    
 
     </div>
 	<div style="position: fixed; top: 20px; right: 20px; text-align: right;">
-    <a href="javascript:void(0);" onclick="window.history.back();" style=" color: #1effa8; text-decoration: none; font-size: 1.2em;">Go back...</a>
+    <a href="javascript:void(0);" onclick="window.history.back();" style="color: #1effa8; text-decoration: none; font-size: 1.2em;">Go back...</a>
 </div>
 </body>
 </html>
