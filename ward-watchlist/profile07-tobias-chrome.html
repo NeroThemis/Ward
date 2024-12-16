@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Database</title>
+    <link rel="stylesheet" href="../styles.css">
+
+    <div id="header-placeholder"></div> <!-- Placeholder for the header -->
+    
+    <script>
+        // Load the header
+        fetch('https://nerothemis.github.io/Ward/main-header.html') // This path is correct if file01-the-warden.html is in a subfolder
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+        });
+    </script>
+
+    <style>
+        body {
+            display: flex; /* Enable Flexbox for the body */
+            justify-content: center; /* Center the panels horizontally */
+            align-items: flex-start; /* Align items to the top */
+        }
+
+        .entry-01-panel, .file-01-secondary-panel {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 10px;
+            flex: 1; /* Allow both panels to grow equally */
+        }
+
+        .entry-01-panel {
+            max-width: 1100px; /* Optional: Set a maximum width to prevent it from getting too wide */
+            height: auto; /* Change height to auto to adapt to content */
+            font-size: 1.2em;
+            box-sizing: border-box; /* Include padding in width/height */
+            background-color: rgba(0, 0, 0, 0.7); /* Background color with some transparency */
+            margin: 30px auto 20px; /* Center the panel with auto margins */
+            border: 4px solid #1effa8; /* Square outline */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+        }
+
+        .entry-01-panel p, .entry-01-panel blockquote, .entry-01-panel li {
+            margin: 15px 0; /* Add margin for spacing */
+            color: #1effa8; /* Set font color */
+            font-size: 1.2em;
+        }
+
+        .entry-01-secondary-panel {
+            height: auto; /* Change height to auto to adapt to content */
+            max-width: 400px;
+            font-size: 1.2em;
+            color: #1effa8;
+            margin: 80px 20px 20px; /* Margin for spacing, moved down from top */
+            padding: 10px; /* Padding for secondary panel */
+            background-color: rgba(0, 0, 0, 0.5); /* Background color for the secondary panel */
+            border: 4px solid #1effa8; /* Square outline */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+        }
+
+        .entry-local-images img {
+            image-rendering: pixelated; /* Ensure pixel art is rendered sharply */
+            image-rendering: crisp-edges; /* Alternative option */
+        }
+
+        h2 {
+            color: #1effa8;
+        }
+
+        h3 {
+            color: #1effa8;
+        }
+
+        li {
+            color: #1effa8;
+        }
+
+        .special {
+            color: #e7b11f; /* Set the desired color */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="entry-01-panel">
+        <h2 class="file-report">Profile 07 - Tobias 'True Shot' Chrome</h2>
+        <p><strong>Profile Number</strong>: 07</p>
+
+        <p><strong>Name</strong>: Tobias Chrome</p>
+
+        <p><strong>Aliases</strong>: True Shot, Tobey and Chrom</p>
+
+        <p><strong>Species</strong>: Human</p>
+
+        <p><strong>Operational Conduct</strong>: Rogue Neutralizer</p>
+
+        <p><strong>Summary</strong>:<br>
+        Tobias Chrome is a member of the Order of the Watcher and is considered by the Disciple, the cult's leader, to be a "believer" who has "awakened." He is capable of manifesting small flames through his fingers and has occasionally been seen lighting leaves, pieces of paper, and various random objects. He is known to be an extremely valuable asset during conflicts against the world government’s military forces and anomalies.</p>
+
+        <p><strong>Known Interferences</strong>:<br>
+        Tobias is known for having completely neutralized Entry 32, the Howl Hound, thereby preventing further studies and assessment of the properties of the anomalous entity.</p>
+
+        <p><strong>Specialization/Skills</strong>: Marksman, remarkable proficiency in the use of precision rifles.</p>
+
+        <p><strong>Psychological Evaluation</strong>:<br>
+        A cunning man, he is very well-prepared to deal with any danger and has become jaded to many of the horrors posed by the anomalous entities that plague the world. While he does not particularly believe in the Warden as a god, he does have faith in the Warden as a protector of Terra.</p>
+
+        <p><strong>Commentary</strong>:<br>
+        Tobias Chrome is a fascinating individual. His contributions to the Ward have been both positive and negative. For now, the Warden has instructed us to keep him under vigilance. This section has been written by Honemi, under direct orders from the Warden.</p>
+
+        <p><strong>Notable Incidents</strong>:</p>
+        <ul>
+            <li>During the recovery of Entry 35, the Cumulus Glass, the Warden and Tobias exchanged some words in regards to the cult's position to the Warden themselves.<br>
+            <blockquote>
+                <p>"So, you are our god?" - Tobias</p>
+                <p>"Foolish. I am no god, child of man." - The Warden</p>
+                <p>"What are you then?" - Tobias</p>
+                <p>"Alone. The only of my kind, fighting your wars." - The Warden</p>
+
+            After this interaction, the Warden conducted the containment procedures for Entry 35 themselves, thanking the Order for their assistance.</li>
+        </ul>
+
+        <p><strong>Status</strong>: Alive</p>
+
+
+    </div>
+
+    <div style="position: fixed; top: 20px; right: 20px; text-align: right;">
+        <a href="javascript:void(0);" onclick="window.history.back();" style="color: #1effa8; text-decoration: none; font-size: 1.2em;">Go back...</a>
+    </div>
+</body>
+</html>
