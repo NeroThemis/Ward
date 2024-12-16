@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Database</title>
+    <link rel="stylesheet" href="../styles.css">
+
+    <div id="header-placeholder"></div> <!-- Placeholder for the header -->
+    
+    <script>
+        // Load the header
+        fetch('https://nerothemis.github.io/Ward/main-header.html') // This path is correct if file01-the-warden.html is in a subfolder
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+        });
+    </script>
+
+    <style>
+        body {
+            display: flex; /* Enable Flexbox for the body */
+            justify-content: center; /* Center the panels horizontally */
+            align-items: flex-start; /* Align items to the top */
+        }
+
+        .entry-01-panel, .file-01-secondary-panel {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 10px;
+            flex: 1; /* Allow both panels to grow equally */
+        }
+
+        .entry-01-panel {
+            max-width: 1100px; /* Optional: Set a maximum width to prevent it from getting too wide */
+            height: auto; /* Change height to auto to adapt to content */
+            font-size: 1.2em;
+            box-sizing: border-box; /* Include padding in width/height */
+            background-color: rgba(0, 0, 0, 0.7); /* Background color with some transparency */
+            margin: 30px auto 20px; /* Center the panel with auto margins */
+            border: 4px solid #1effa8; /* Square outline */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+        }
+
+        .entry-01-panel p, .entry-01-panel blockquote, .entry-01-panel li {
+            margin: 15px 0; /* Add margin for spacing */
+            color: #1effa8; /* Set font color */
+            font-size: 1.2em;
+        }
+
+        .entry-01-secondary-panel {
+            height: auto; /* Change height to auto to adapt to content */
+            max-width: 400px;
+            font-size: 1.2em;
+            color: #1effa8;
+            margin: 80px 20px 20px; /* Margin for spacing, moved down from top */
+            padding: 10px; /* Padding for secondary panel */
+            background-color: rgba(0, 0, 0, 0.5); /* Background color for the secondary panel */
+            border: 4px solid #1effa8; /* Square outline */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+        }
+
+        .entry-local-images img {
+            image-rendering: pixelated; /* Ensure pixel art is rendered sharply */
+            image-rendering: crisp-edges; /* Alternative option */
+        }
+
+        h2 {
+            color: #1effa8;
+        }
+
+        h3 {
+            color: #1effa8;
+        }
+
+        li {
+            color: #1effa8;
+        }
+
+        .special {
+            color: #e7b11f; /* Set the desired color */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="entry-01-panel">
+        <h2 class="file-report">Log 02 - The Warden's Arrival</h2>
+        
+        <p><strong>Log Entry</strong>: 02</p>
+
+        <p><strong>Date:</strong> June 5th, 2254</p>
+
+        <p><strong>Event:</strong> Orbital Threat Detection - “The Warden's Arrival”</p>
+
+        <p><strong>Overview</strong>:<br>
+        On June 5th, 2254, a state of emergency was declared by the World Government's military forces. During routine procedures, the International Space Station Orion (ISS-O) sent a distress signal to the Department of Security. In the message, it was explained that a potential threat had been sighted in Earth's orbit and was slowly approaching.</p>
+
+        <p><strong>Details of the Event:</strong><br>
+        At 11:26 UTC, as astronaut William Morozov was taking care of maintenance procedures outside of the International Space Station Orion (ISS-O), he noticed a small object in the distance. Believing it to be a satellite or some sort of space debris, he initiated safety protocols.</p>
+
+        <blockquote>
+            <p><strong>Astronaut</strong>: "Mission Control, this is EV1 onboard Orion. I have visual on debris approaching my location. Requesting immediate assessment and guidance."</p>
+            <p><strong>Mission Control</strong>: "Copy that, EV1. We are tracking the debris now. Stand by for further instructions."</p>
+            <p><strong>Astronaut</strong>: "Mission Control, I don’t think that’s debris. It’s approaching quickly and appears to be massive."</p>
+            <p><strong>Mission Control (After Assessment)</strong>: "EV1, we are unable to determine the nature of the object. You are instructed to initiate evasive maneuvers. Secure yourself to the spacecraft and proceed to the airlock."</p>
+            <p><strong>Astronaut</strong>: "Understood, Mission Control. Securing myself and moving to the airlock now."</p>
+            <p><strong>Mission Control</strong>: "Stay safe, EV1. We will continue to monitor the object and provide updates."</p>
+            <p><strong>Astronaut</strong>: "Holy shit. Mission Control, notify the Department of Security immediately. It’s not debris or a satellite, it's a spacecraft and it’s massive."</p>
+            <p><strong>Mission Control</strong>: "Understood, EV1. We are escalating this to the Department of Security right away. Continue with your evasive maneuvers and keep us updated on any changes. We will provide further instructions as soon as we receive additional information."</p>
+        </blockquote>
+
+        <p><strong>Key Affected Areas:</strong></p>
+        <ul>
+            <li><strong>Earth's Orbit</strong>: The Ward is now part of the daily lives of humans on Earth, visible from the surface as a large, dark object completely still in the sky. It is culturally believed to be a bad omen, while others see it as a sign of hope, with some believing it offers protection against the anomalies.</li>
+        </ul>
+
+        <p><strong>Response or Recovery Efforts:</strong></p>
+        <ul>
+            <li><strong>Global Coordination</strong>: The World Government had its hands tied, as the International Space Station Orion (ISS-O) was not equipped in any way to defend itself from a potential attacker. Even with the available military forces, engaging with a mysterious spacecraft would have been completely unreasonable. This led the leaders of the World Government to consider sending an astronaut to attempt communication with the foreign object.<br>
+            However, the being behind the foreign object did not wait. Suddenly, the spacecraft launched a shuttle that landed near the west coast of Europe, just off the shores of Ireland.</li>
+            
+            <li><strong>Societal Adaptation</strong>: The global population, especially in Europe, panicked, deeming the shuttle a potential threat. Evacuation efforts were initiated, leaving much of Ireland completely desolate. Weeks after the landing, as the military enacted safety procedures and prepared to scout the object, many evacuated civilians returned to their homes, having no resources to sustain themselves elsewhere. This put them at risk of exposure to the foreign object, which could potentially cause them harm.<br>
+            As the military established a cautionary zone along the west coast of Ireland, they began receiving various signals that appeared to be messages, perhaps an attempt at contact. When this information leaked to the public, there was a widespread demand for a negotiator to be sent to communicate directly with the shuttle.</li>
+        </ul>
+
+        <p><strong>Current Status:</strong> Refer to Log 02-1.</p>
+
+
+    </div>
+
+    <div style="position: fixed; top: 20px; right: 20px; text-align: right;">
+        <a href="javascript:void(0);" onclick="window.history.back();" style="color: #1effa8; text-decoration: none; font-size: 1.2em;">Go back...</a>
+    </div>
+</body>
+</html>
